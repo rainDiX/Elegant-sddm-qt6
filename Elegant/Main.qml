@@ -114,7 +114,7 @@ Rectangle {
                 id: sessionFrame
                 anchors.fill: parent
                 enabled: root.state == "stateSession"
-                onSelected: {
+                onSelected: (index) => {
                     console.log("Selected session:", index)
                     root.state = "stateLogin"
                     loginFrame.sessionIndex = index
@@ -130,7 +130,7 @@ Rectangle {
                 id: userFrame
                 anchors.fill: parent
                 enabled: root.state == "stateUser"
-                onSelected: {
+                onSelected: (userName) => {
                     console.log("Select user:", userName)
                     root.state = "stateLogin"
                     loginFrame.userName = userName

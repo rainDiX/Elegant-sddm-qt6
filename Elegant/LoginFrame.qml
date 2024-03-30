@@ -12,11 +12,11 @@ Item {
 
     Connections {
         target: sddm
-        onLoginSucceeded: {
+        function onLoginSucceeded() {
             glowAnimation.running = false
             Qt.quit()
         }
-        onLoginFailed: {
+        function onLoginFailed() {
             passwdInput.echoMode = TextInput.Normal
             passwdInput.text = textConstants.loginFailed
             passwdInput.focus = false
